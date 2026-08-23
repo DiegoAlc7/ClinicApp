@@ -5,10 +5,10 @@ public class Appointment
     public Guid id;
     public Guid pid;
     public Guid did;
-    public Guid oid;
-    public int st;
-    public DateTime dt1;
-    public DateTime dt2;
+    public Guid oid;  //dentalofficeID
+    public int st;  //Appointment: 1=pending, 2=cancelled, 3=completed
+    public DateTime dt1;  //StartDate
+    public DateTime dt2;  //EndDate
     public bool flag1;
     public Appointment(Guid pid, Guid did, Guid oid, DateTime dt1, DateTime dt2)
     {
@@ -34,15 +34,15 @@ public class Appointment
         this.flag1 = true;
         this.id = Guid.NewGuid();
         ClinicManager.GetInstance().AllAppointments.Add(this);
-
     }
-    public void DoIt()
+    public void DoIt() //cancel appointment
     {
         if (st != 1) { throw new Exception("error"); }
         st = 2;
         flag1 = false;
     }
-    public void DoIt2()
+
+    public void DoIt2() //complete appointment
     {
         if (st != 1) { throw new Exception("error"); }
         st = 3;

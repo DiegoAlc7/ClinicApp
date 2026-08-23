@@ -26,6 +26,7 @@ internal class Program
             appointment.flag1 = false;
             Console.WriteLine("Cita cancelada. Estado: " + appointment.st);
         }
+
         Appointment appointment2 = new Appointment(
         patient.id,
         dentist.id,
