@@ -8,7 +8,6 @@ internal class Program
         Dentist dentist = new Dentist("Dr. Smith", "dentist@gmail.com");
         DentalOffice dentalOffice = new DentalOffice("Consultorio de limpieza dental");
 
-
         Appointment appointment = new Appointment(
         patient.id,
         dentist.id,
@@ -17,11 +16,9 @@ internal class Program
         DateTime.UtcNow.AddHours(2)
         );
 
-
         Console.WriteLine("Cita guardada. Id: " + appointment.id);
         Console.WriteLine("Estado inicial (1=pendiente): " + appointment.st);
         Console.WriteLine("Enviando correo a: " + patient.em);
-
 
         if (appointment.st == 1)
         {
@@ -36,7 +33,6 @@ internal class Program
         DateTime.UtcNow.AddHours(3),
         dt2: DateTime.UtcNow.AddHours(4)
         );
-
 
         appointment2.DoIt2();
         Console.WriteLine("Despues de DoIt2() — estado: " + appointment2.st);
